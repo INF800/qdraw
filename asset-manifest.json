@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/qdraw/static/css/main.eab24d3c.chunk.css",
+    "main.js": "/qdraw/static/js/main.27beb75e.chunk.js",
+    "main.js.map": "/qdraw/static/js/main.27beb75e.chunk.js.map",
+    "runtime-main.js": "/qdraw/static/js/runtime-main.5106c99c.js",
+    "runtime-main.js.map": "/qdraw/static/js/runtime-main.5106c99c.js.map",
+    "static/js/2.0ce8f115.chunk.js": "/qdraw/static/js/2.0ce8f115.chunk.js",
+    "static/js/2.0ce8f115.chunk.js.map": "/qdraw/static/js/2.0ce8f115.chunk.js.map",
+    "index.html": "/qdraw/index.html",
+    "precache-manifest.71f13072f0efed5615498526f7bf41c9.js": "/qdraw/precache-manifest.71f13072f0efed5615498526f7bf41c9.js",
+    "service-worker.js": "/qdraw/service-worker.js",
+    "static/css/main.eab24d3c.chunk.css.map": "/qdraw/static/css/main.eab24d3c.chunk.css.map",
+    "static/js/2.0ce8f115.chunk.js.LICENSE.txt": "/qdraw/static/js/2.0ce8f115.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5106c99c.js",
+    "static/js/2.0ce8f115.chunk.js",
+    "static/css/main.eab24d3c.chunk.css",
+    "static/js/main.27beb75e.chunk.js"
+  ]
+}
