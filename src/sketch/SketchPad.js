@@ -46,9 +46,15 @@ function SketchPad() {
     <div>
       <canvas
           className="canvas"
+          
           onMouseDown={startDrawing}
           onMouseUp={finishDrawing}
           onMouseMove={draw}
+          
+          onTouchStart={startDrawing}
+          onTouchEnd={finishDrawing}
+          onTouchMove={draw}
+          
           ref={canvasRef}
       />
     </div>
