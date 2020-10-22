@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/qdraw/static/css/main.47bf82b0.chunk.css",
-    "main.js": "/qdraw/static/js/main.c6183c6d.chunk.js",
-    "main.js.map": "/qdraw/static/js/main.c6183c6d.chunk.js.map",
+    "main.css": "/qdraw/static/css/main.1805b25c.chunk.css",
+    "main.js": "/qdraw/static/js/main.2ce3b7b3.chunk.js",
+    "main.js.map": "/qdraw/static/js/main.2ce3b7b3.chunk.js.map",
     "runtime-main.js": "/qdraw/static/js/runtime-main.5106c99c.js",
     "runtime-main.js.map": "/qdraw/static/js/runtime-main.5106c99c.js.map",
-    "static/js/2.0ce8f115.chunk.js": "/qdraw/static/js/2.0ce8f115.chunk.js",
-    "static/js/2.0ce8f115.chunk.js.map": "/qdraw/static/js/2.0ce8f115.chunk.js.map",
+    "static/js/2.7187ea1f.chunk.js": "/qdraw/static/js/2.7187ea1f.chunk.js",
+    "static/js/2.7187ea1f.chunk.js.map": "/qdraw/static/js/2.7187ea1f.chunk.js.map",
     "index.html": "/qdraw/index.html",
-    "precache-manifest.593d1bc79b37fe22a3010f5d12ad0a90.js": "/qdraw/precache-manifest.593d1bc79b37fe22a3010f5d12ad0a90.js",
+    "precache-manifest.289aff961ef37e991447b3c80dcedb0c.js": "/qdraw/precache-manifest.289aff961ef37e991447b3c80dcedb0c.js",
     "service-worker.js": "/qdraw/service-worker.js",
-    "static/css/main.47bf82b0.chunk.css.map": "/qdraw/static/css/main.47bf82b0.chunk.css.map",
-    "static/js/2.0ce8f115.chunk.js.LICENSE.txt": "/qdraw/static/js/2.0ce8f115.chunk.js.LICENSE.txt"
+    "static/css/main.1805b25c.chunk.css.map": "/qdraw/static/css/main.1805b25c.chunk.css.map",
+    "static/js/2.7187ea1f.chunk.js.LICENSE.txt": "/qdraw/static/js/2.7187ea1f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5106c99c.js",
-    "static/js/2.0ce8f115.chunk.js",
-    "static/css/main.47bf82b0.chunk.css",
-    "static/js/main.c6183c6d.chunk.js"
+    "static/js/2.7187ea1f.chunk.js",
+    "static/css/main.1805b25c.chunk.css",
+    "static/js/main.2ce3b7b3.chunk.js"
   ]
 }
