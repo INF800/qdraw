@@ -1,0 +1,10 @@
+.UndoButtonWeb {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: red;
+
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
