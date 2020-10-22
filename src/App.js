@@ -5,7 +5,7 @@ import UndoButton from './ui/UndoButton'
 import Info from './ui/Info'
 
 // axios
-import {setisBackendUpFromAPI, predictB64} from './api'
+import {setisBackendUpFromAPI, predictB64, isRightDoodle} from './api'
 
 
 function App() {
@@ -15,17 +15,16 @@ function App() {
 
   const [isBackendUp, setisBackendUp] = useState(false)
   const [curB64, setCurB64] = useState(null)
-  const [doodle, updateDoodle] = useState('initalDoodleFromStoredData')
-  const [time, updateTime] = useState('resetTime')
+  const [curDoodle, setDoodle] = useState('initalDoodleFromStoredData')
+  const [time, setTime] = useState('resetTime')
 
-  useEffect(()=>{
-    // if isBackendUp is false, try to wake. skip if already up
-    // to avoid unnncecessary requests
+  useEffect( ()=>{
     setisBackendUpFromAPI(isBackendUp, setisBackendUp)
-    // send to api and get preds if b64 is not null (initial case)
-    predictB64(curB64)
+    var preds = predictB64(curB64)
+    console.log('o', preds)
+    const doodleStatus = ( async () => {return await isRightDoodle(preds, curDoodle)})
 
-  })
+  }, [isBackendUp, curB64, curDoodle])
 
   
   if (isBackendUp !== true){
@@ -48,7 +47,7 @@ function App() {
         contextRef={contextRef}
       />
       <Info
-        doodle={doodle}
+        doodle={curDoodle}
         time={time}
       />
     </div>

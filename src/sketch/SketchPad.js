@@ -13,13 +13,13 @@ function SketchPad({canvasRef, contextRef, setCurB64}) {
     
     const context = canvas.getContext("2d")
     //context.scale(2,2)
-    context.fillStyle = "rgb(255,255,255)";
-    context.fillRect(0,0,window.innerWidth, window.innerHeight);
+    //context.fillStyle = "rgb(255,255,255)";
+    //context.fillRect(0,0,window.innerWidth, window.innerHeight);
     context.lineCap = "round"
-    context.strokeStyle = "black"
+    context.strokeStyle = "rgb(1,1,1)"
     context.lineWidth = 5
     contextRef.current = context;
-  }, [])
+  }, [canvasRef, contextRef])
 
   const startDrawing = ({nativeEvent}) => {
     nativeEvent.preventDefault()
