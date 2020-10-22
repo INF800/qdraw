@@ -1,7 +1,7 @@
 import React from 'react';
 import './Info.css'
 
-function Info({doodle='xxx', time='yy'}) {
+function Info({doodle, time}) {
 
   return (
     <div className="InfoWeb">

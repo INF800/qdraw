@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import './App.css';
 import SketchPad from './sketch/SketchPad'
 import UndoButton from './ui/UndoButton'
@@ -8,6 +8,8 @@ function App() {
 
   const canvasRef = useRef(null)
   const contextRef = useRef(null)
+  const [doodle, updateDoodle] = useState('xxx')
+  const [time, updateTime] = useState('yy')
 
   return (
     <div>
@@ -18,7 +20,10 @@ function App() {
       <UndoButton
         contextRef={contextRef}
       />
-      <Info/>
+      <Info
+        doodle={doodle}
+        time={time}
+      />
     </div>
   )
 }
