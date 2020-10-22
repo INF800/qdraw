@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-function SketchPad({canvasRef, contextRef}) {
+function SketchPad({canvasRef, contextRef, setCurB64}) {
 
   const [isDrawing, setIsDrawing] = useState(false)
   
@@ -31,6 +31,8 @@ function SketchPad({canvasRef, contextRef}) {
     nativeEvent.preventDefault()
     contextRef.current.closePath()
     setIsDrawing(false)
+    // update cur image on screen
+    setCurB64(canvasRef.current.toDataURL())
   }
 
   const draw = ({nativeEvent}) => {
