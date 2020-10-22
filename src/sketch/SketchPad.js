@@ -12,7 +12,9 @@ function SketchPad({canvasRef, contextRef, setCurB64}) {
     canvas.style.height = `${window.innerHeight}px`;
     
     const context = canvas.getContext("2d")
-    // context.scale(2,2)
+    //context.scale(2,2)
+    context.fillStyle = "rgb(255,255,255)";
+    context.fillRect(0,0,window.innerWidth, window.innerHeight);
     context.lineCap = "round"
     context.strokeStyle = "black"
     context.lineWidth = 5
@@ -32,7 +34,7 @@ function SketchPad({canvasRef, contextRef, setCurB64}) {
     contextRef.current.closePath()
     setIsDrawing(false)
     // update cur image on screen
-    setCurB64(canvasRef.current.toDataURL())
+    setCurB64(canvasRef.current.toDataURL("image/jpeg"))
   }
 
   const draw = ({nativeEvent}) => {

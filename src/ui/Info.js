@@ -6,7 +6,7 @@ function Info({doodle, time}) {
   return (
     <div className="InfoWeb">
       Please draw <b>{doodle}</b> <br/>
-      in <b>{time}</b> seconds
+      in <b><span className="letter-changer">{time}</span></b> seconds
     </div>
   )
 }

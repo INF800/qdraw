@@ -5,7 +5,7 @@ import UndoButton from './ui/UndoButton'
 import Info from './ui/Info'
 
 // axios
-import {setisBackendUpFromAPI} from './api'
+import {setisBackendUpFromAPI, predictB64} from './api'
 
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
     // if isBackendUp is false, try to wake. skip if already up
     // to avoid unnncecessary requests
     setisBackendUpFromAPI(isBackendUp, setisBackendUp)
-    // send to api and get preds
-    console.log(curB64)
+    // send to api and get preds if b64 is not null (initial case)
+    predictB64(curB64)
 
   })
 
@@ -31,7 +31,8 @@ function App() {
   if (isBackendUp !== true){
     return (
       <div  className='BigInfo'>
-        😴 &nbsp; Waking up server...
+        Waking up server &nbsp;😴 &nbsp;  
+        <span className="letter-changer">ZzZ</span>
       </div>
     )
   }

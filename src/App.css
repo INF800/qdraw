@@ -11,3 +11,21 @@
   text-align: center;
   margin-top: 40vh;
 }
+
+
+@keyframes changeLetter {
+  0% {
+    content: "z";
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    content: "zZ";
+  }
+}
+
+.letter-changer {
+  content: "z";
+  animation: changeLetter 3s linear infinite alternate;
+}
