@@ -16,9 +16,11 @@ function SketchPad() {
     //canvas.style.height = `${window.innerHeight}px`;
     //canvas.height = 200
     //canvas.width = 200
+    //canvas.style.width = `${200}px`;
+    //canvas.style.height = `${200}px`;
 
     const context = canvas.getContext("2d")
-    ///context.scale(2,2)
+    // context.scale(2,2)
     context.lineCap = "round"
     context.strokeStyle = "black"
     context.lineWidth = 5
@@ -26,25 +28,27 @@ function SketchPad() {
   }, [])
 
   const startDrawing = ({nativeEvent}) => {
-    console.log("started")
+    nativeEvent.preventDefault()
     const {offsetX, offsetY} = nativeEvent;
     contextRef.current.beginPath()
     contextRef.current.moveTo(offsetX, offsetY)
     setIsDrawing(true)
   }
 
-  const finishDrawing = () => {
-    console.log("finished")
+  const finishDrawing = ({nativeEvent}) => {
+    nativeEvent.preventDefault()
     contextRef.current.closePath()
    setIsDrawing(false)
   }
 
   const draw = ({nativeEvent}) => {
+    nativeEvent.preventDefault()
     if(!isDrawing){
       return
     }
     const {offsetX, offsetY} = nativeEvent;
 
+    // for touch screen
     if (offsetX === undefined){
       var rect = nativeEvent.target.getBoundingClientRect();
       var x = nativeEvent.targetTouches[0].pageX - rect.left;
