@@ -6,3 +6,8 @@
   border: 1px solid black;
   touch-action:none
 }
+
+.BigInfo{
+  text-align: center;
+  margin-top: 40vh;
+}
