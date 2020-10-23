@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {Speech} from './speech'
 //===================================
 const base = "http://127.0.0.1:"
 const port = "8008/"
@@ -27,9 +28,13 @@ const resetDoodle = (preds, curDoodle, setTime, timeFieldRef, runningTimerRef) =
 
     for (let i=0; i<preds.length; i++){
         const [label, score] = preds[i]
+        
+        Speech("I see " + label)
+
         if (curDoodle === label) {
             // reset time, doodlename to new
             // -------------------------------
+            // todo: doodle name
             if (runningTimerRef.current !== null){
                 clearInterval(runningTimerRef.current);
             }
