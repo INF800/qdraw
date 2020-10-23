@@ -1,7 +1,7 @@
 import axios from 'axios'
 //===================================
 const base = "http://127.0.0.1:"
-const port = "8003/"
+const port = "8008/"
 //===================================
 
 async function setisBackendUpFromAPI(isBackendUp, setisBackendUp){
@@ -24,6 +24,7 @@ const predictB64 = async (curB64) => {
 const resetDoodle = (preds, curDoodle, setTime, timeFieldRef, runningTimerRef) => {
     if (preds===undefined) {return} 
     console.log(preds)
+
     for (let i=0; i<preds.length; i++){
         const [label, score] = preds[i]
         if (curDoodle === label) {
@@ -40,7 +41,7 @@ const resetDoodle = (preds, curDoodle, setTime, timeFieldRef, runningTimerRef) =
                 if(timeleft <= 0)
                     clearInterval(runningTimerRef.current);
             },1000);
-            setTime("10") // should be @end
+            //setTime("10") // should be @end
             // --------------------------------
             return true
         }

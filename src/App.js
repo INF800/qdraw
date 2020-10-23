@@ -18,7 +18,7 @@ function App() {
   const [isBackendUp, setisBackendUp] = useState(false)
   const [curB64, setCurB64] = useState(null)
   const [curDoodle, setDoodle] = useState('Q')
-  const [time, setTime] = useState('resetTime')
+  const [time, setTime] = useState('InitalresetTime')
 
   useEffect( ()=>{
     setisBackendUpFromAPI(isBackendUp, setisBackendUp)
