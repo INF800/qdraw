@@ -1,9 +1,23 @@
-.UndoButtonWeb {
+.UndoContainer{
     position: fixed;
-    top: 20px;
-    right: 20px;
-    color: red;
+    margin-top: 10px;
+}
 
+.NextButtonWeb {
+    text-align: center;
+    font-size: small;
+    width: 60px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.UndoButtonWeb {
+    text-align: center;
+    font-size: small;
+    width: 60px;
+    color: black;
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;

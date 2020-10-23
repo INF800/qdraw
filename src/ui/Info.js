@@ -1,12 +1,12 @@
 import React from 'react';
 import './Info.css'
 
-function Info({doodle, time}) {
+function Info({doodle, time, timeFieldRef}) {
 
   return (
     <div className="InfoWeb">
       Please draw <b>{doodle}</b> <br/>
-      in <b><span className="letter-changer">{time}</span></b> seconds
+      in <b><span ref={timeFieldRef} className="letter-changer">{time}</span></b> seconds
     </div>
   )
 }

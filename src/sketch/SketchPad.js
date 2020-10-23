@@ -6,11 +6,15 @@ function SketchPad({canvasRef, contextRef, setCurB64}) {
   
   useEffect(() => {
     const canvas = canvasRef.current;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    canvas.style.width = `${window.innerWidth}px`;
-    canvas.style.height = `${window.innerHeight}px`;
-    
+    // canvas.width = window.innerWidth;
+    // canvas.height = window.innerHeight;
+    // canvas.style.width = `${window.innerWidth}px`;
+    // canvas.style.height = `${window.innerHeight}px`;
+    canvas.width = 350;
+    canvas.height = 350;
+    canvas.style.width = `${350}px`;
+    canvas.style.height = `${350}px`;
+
     const context = canvas.getContext("2d")
     //context.scale(2,2)
     //context.fillStyle = "rgb(255,255,255)";
@@ -58,7 +62,7 @@ function SketchPad({canvasRef, contextRef, setCurB64}) {
   }
   
   return (
-    <div>
+    <div className="CanvasContainer">
       <canvas
           className="canvas"
           

@@ -18,13 +18,34 @@ const predictB64 = async (curB64) => {
     const response = await axios.post(base + port + "predict", {
         "b64Image": curB64
     })
-    // todo: find why 'Promise' if not used as in below.
-    // ! it taking time!!!!!!!!!!!!!
-    console.log('i',response.data)
-    return response.data
+    return response.data.preds
 }
 
-const isRightDoodle = (preds, curDoodle) => {
+const resetDoodle = (preds, curDoodle, setTime, timeFieldRef, runningTimerRef) => {
+    if (preds===undefined) {return} 
+    console.log(preds)
+    for (let i=0; i<preds.length; i++){
+        const [label, score] = preds[i]
+        if (curDoodle === label) {
+            // reset time, doodlename to new
+            // -------------------------------
+            if (runningTimerRef.current !== null){
+                clearInterval(runningTimerRef.current);
+            }
+            clearInterval(runningTimerRef.current);
+            var timeleft = 10
+            runningTimerRef.current = setInterval(function(){
+                timeleft--;
+                timeFieldRef.current.textContent = timeleft;
+                if(timeleft <= 0)
+                    clearInterval(runningTimerRef.current);
+            },1000);
+            setTime("10") // should be @end
+            // --------------------------------
+            return true
+        }
+    }
+    return false
 }
 
-export {setisBackendUpFromAPI, predictB64, isRightDoodle}
+export {setisBackendUpFromAPI, predictB64, resetDoodle}

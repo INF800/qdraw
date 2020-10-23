@@ -2,7 +2,13 @@
   text-align: center;
 }
 
+.CanvasContainer{
+  margin-top: 20vh;
+  text-align: center;
+}
 .canvas {
+  border: 3px solid black;
+  border-radius: 10px;
   touch-action:none
 }
 

@@ -3,6 +3,18 @@ import './UndoButton.css'
 
 function UndoButton({contextRef}) {
 
+  function retBottomPos(){
+    if (window.innerHeight > window.innerWidth){
+      return "100vh"
+    } else {
+      return "20vh"
+    }
+  }
+
+  const next = () => {
+    // todo
+  }
+
   const undo = () => {
     contextRef.current.clearRect(0, 0, window.innerWidth, window.innerHeight);
     //contextRef.current.fillStyle = "rgb(255,255,255)";
@@ -10,11 +22,21 @@ function UndoButton({contextRef}) {
   }
 
   return (
-    <div
-      onClick={undo} 
-      className="UndoButtonWeb">
-        Undo
+    <div className="UndoContainer">
+      <div
+        onClick={next} 
+        className="NextButtonWeb"
+      >
+        Skip
+      </div>
+      <div
+        onClick={undo} 
+        className="UndoButtonWeb"
+      >
+        Clear
+      </div>
     </div>
+    
   )
 }
 

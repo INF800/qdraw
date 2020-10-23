@@ -5,28 +5,30 @@ import UndoButton from './ui/UndoButton'
 import Info from './ui/Info'
 
 // axios
-import {setisBackendUpFromAPI, predictB64, isRightDoodle} from './api'
+import {setisBackendUpFromAPI, predictB64, resetDoodle} from './api'
 
 
 function App() {
 
   const canvasRef = useRef(null)
   const contextRef = useRef(null)
+  const timeFieldRef = useRef(null)
+  const runningTimerRef = useRef(null)
 
   const [isBackendUp, setisBackendUp] = useState(false)
   const [curB64, setCurB64] = useState(null)
-  const [curDoodle, setDoodle] = useState('initalDoodleFromStoredData')
+  const [curDoodle, setDoodle] = useState('Q')
   const [time, setTime] = useState('resetTime')
 
   useEffect( ()=>{
     setisBackendUpFromAPI(isBackendUp, setisBackendUp)
-    var preds = predictB64(curB64)
-    console.log('o', preds)
-    const doodleStatus = ( async () => {return await isRightDoodle(preds, curDoodle)})
+    const run = async () => {
+      var preds = await predictB64(curB64)
+      const doodleStatus = resetDoodle(preds, curDoodle, setTime, timeFieldRef, runningTimerRef)
+    }
+    run()
+  }, [isBackendUp, curB64, curDoodle, time, timeFieldRef, runningTimerRef])
 
-  }, [isBackendUp, curB64, curDoodle])
-
-  
   if (isBackendUp !== true){
     return (
       <div  className='BigInfo'>
@@ -49,6 +51,7 @@ function App() {
       <Info
         doodle={curDoodle}
         time={time}
+        timeFieldRef={timeFieldRef}
       />
     </div>
   )
