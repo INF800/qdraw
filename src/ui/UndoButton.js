@@ -23,19 +23,20 @@ function UndoButton({contextRef}) {
 
   return (
     <div className="ButtonsContainer">
-      <div
-        onClick={next} 
-        className="NextButtonWeb"
+        
+      <button 
+        onClick={next}
+        className="button white"
       >
-        Skip
-      </div>
+        skip
+      </button>
       &nbsp;  &nbsp;  
-      <div
+      <button
         onClick={undo} 
-        className="UndoButtonWeb"
+        className="button red"
       >
         Clear
-      </div>
+      </button>
     </div>
     
   )
