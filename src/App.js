@@ -3,6 +3,7 @@ import './App.css';
 import SketchPad from './sketch/SketchPad'
 import UndoButton from './ui/UndoButton'
 import Info from './ui/Info'
+import Voice from './ui/Voice'
 import {Speech} from './speech'
 import {setisBackendUpFromAPI, predictB64, resetDoodle} from './api'
 
@@ -12,10 +13,11 @@ function App() {
   const contextRef = useRef(null)
   const timeFieldRef = useRef(null)
   const runningTimerRef = useRef(null)
+  const voiceDisplayRef = useRef(null)
 
   const [isBackendUp, setisBackendUp] = useState(false)
   const [curB64, setCurB64] = useState(null)
-  const [curDoodle, setDoodle] = useState('animal migration')
+  const [curDoodle, setDoodle] = useState('lollipop')
   const [time, setTime] = useState('10')
 
   useEffect( ()=>{
@@ -23,7 +25,10 @@ function App() {
     const run = async () => {
       speechSynthesis.cancel() // clear queue due to async/await
       var preds = await predictB64(curB64)
-      const doodleStatus = resetDoodle(preds, curDoodle, setTime, timeFieldRef, runningTimerRef)
+      const doodleStatus = resetDoodle(
+        preds, curDoodle, setTime, 
+        timeFieldRef, runningTimerRef, voiceDisplayRef
+      )
     }
     run()
   }, [isBackendUp, curB64, curDoodle, time, timeFieldRef, runningTimerRef])
@@ -51,6 +56,9 @@ function App() {
         doodle={curDoodle}
         time={time}
         timeFieldRef={timeFieldRef}
+      />
+      <Voice
+        voiceDisplayRef={voiceDisplayRef}
       />
     </div>
   )

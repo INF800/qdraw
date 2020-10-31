@@ -22,14 +22,18 @@ const predictB64 = async (curB64) => {
     return response.data.preds
 }
 
-const resetDoodle = (preds, curDoodle, setTime, timeFieldRef, runningTimerRef) => {
+const resetDoodle = (preds, curDoodle, setTime, timeFieldRef, runningTimerRef, voiceDisplayRef) => {
     if (preds===undefined) {return} 
     console.log(preds)
 
+    // var preds = ""
     for (let i=0; i<preds.length; i++){
         const [label, score] = preds[i]
-        
+
+        console.log('hey')
         Speech("I see " + label)
+        // preds = preds + " " + label
+        // console.log('p: ', preds)
 
         if (curDoodle === label) {
             // reset time, doodlename to new
@@ -51,6 +55,7 @@ const resetDoodle = (preds, curDoodle, setTime, timeFieldRef, runningTimerRef) =
             return true
         }
     }
+    // voiceDisplayRef.current.textContent = "I see " + preds
     return false
 }
 
