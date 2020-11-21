@@ -22,6 +22,19 @@ function UndoButton({contextRef}) {
   }
 
   return (
+    <div className="ButtonsContainer"> 
+      <button
+        onClick={undo} 
+        className="button red"
+        style={{marginLeft: "auto", marginRight: "auto"}}
+      >
+        Clear
+      </button>
+    </div>
+    
+  )
+
+  return (
     <div className="ButtonsContainer">
         
       <button 

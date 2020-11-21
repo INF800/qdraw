@@ -17,7 +17,7 @@ function App() {
 
   const [isBackendUp, setisBackendUp] = useState(false)
   const [curB64, setCurB64] = useState(null)
-  const [curDoodle, setDoodle] = useState('matches')
+  const [curDoodle, setDoodle] = useState('nail')
   const [time, setTime] = useState('any number of')
 
   useEffect( ()=>{

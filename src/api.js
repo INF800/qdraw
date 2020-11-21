@@ -35,7 +35,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const prefixes = ['I see ', 'Looks like ', 'I think', '']
+const prefixes = ['I see ', 'Looks like ', 'I think', '', '', '', '']
 function getRandomPrefix(){
     return prefixes[getRandomInt(0, prefixes.length-1)]
 }
@@ -51,8 +51,6 @@ const resetDoodle = (preds, curDoodle, setDoodle, setTime, timeFieldRef, running
 
     for (let i=0; i<preds.length; i++){
         const [label, score] = preds[i]
-        Speech(getRandomPrefix() + label)
-
         if (curDoodle === label) {
             // reset time, doodlename to new
             // ============================================
@@ -62,16 +60,17 @@ const resetDoodle = (preds, curDoodle, setDoodle, setTime, timeFieldRef, running
             }
 
             console.log('found!')
+            Speech("You do it right!")
             clearInterval(runningTimerRef.current);
             contextRef.current.clearRect(0, 0, window.innerWidth, window.innerHeight);
             setDoodle(classes61[getRandomInt(0, 60)])
 
-            var timeleft = 10
+            var timeleft = 20
             runningTimerRef.current = setInterval(function(){
                 timeleft--;
                 timeFieldRef.current.textContent = timeleft;
                 if(timeleft <= 0){
-                    timeleft = 10
+                    timeleft = 20
                     contextRef.current.clearRect(0, 0, window.innerWidth, window.innerHeight);
                     doNotPredict = true
                     setDoodle(classes61[getRandomInt(0, 60)])
@@ -82,6 +81,7 @@ const resetDoodle = (preds, curDoodle, setDoodle, setTime, timeFieldRef, running
             voiceDisplayStr = ""
             return true
         }
+        Speech(getRandomPrefix() + label)
     }
     voiceDisplayRef.current.innerHTML = voiceDisplayStr
     voiceDisplayStr = ""
