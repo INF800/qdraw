@@ -17,8 +17,8 @@ function App() {
 
   const [isBackendUp, setisBackendUp] = useState(false)
   const [curB64, setCurB64] = useState(null)
-  const [curDoodle, setDoodle] = useState('lollipop')
-  const [time, setTime] = useState('10')
+  const [curDoodle, setDoodle] = useState('matches')
+  const [time, setTime] = useState('any number of')
 
   useEffect( ()=>{
     setisBackendUpFromAPI(isBackendUp, setisBackendUp)
@@ -26,12 +26,12 @@ function App() {
       speechSynthesis.cancel() // clear queue due to async/await
       var preds = await predictB64(curB64)
       const doodleStatus = resetDoodle(
-        preds, curDoodle, setTime, 
-        timeFieldRef, runningTimerRef, voiceDisplayRef
+        preds, curDoodle, setDoodle, setTime,
+        timeFieldRef, runningTimerRef, voiceDisplayRef, contextRef
       )
     }
     run()
-  }, [isBackendUp, curB64, curDoodle, time, timeFieldRef, runningTimerRef])
+  }, [isBackendUp, curB64, curDoodle, time, timeFieldRef, runningTimerRef, contextRef])
 
   if (isBackendUp !== true){
     return (

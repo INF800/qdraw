@@ -16,7 +16,6 @@ function Voice({voiceDisplayRef}) {
         className={"Rectangle Rectangle" + MobOrDesktop}
         ref={voiceDisplayRef}
         >
-            Start drawing ✏️ 
       </div>
     </div>
   )
