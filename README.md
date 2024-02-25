@@ -1,5 +1,7 @@
 ## Frontend for Doodle Recognition
 
+![](https://inf800.github.io/whoami/assets/projs/qdraw.gif)
+
 Run `npm start` and then go to [backend code](https://github.com/rakesh4real/qdraw-backend) and run `python3 -m uvicorn main:app --port 8008 --reload`
 
 
